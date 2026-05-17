@@ -89,6 +89,13 @@
             "title": "Serial Number (optional)",
             "type": "string"
           },
+          "type": {
+            "title": "Device Type",
+            "type": "string"
+          },
+          "_source": {
+            "type": "string"
+          },
           "dishwasher_trigger": {
             "title": "Enable program finished trigger?",
             "type": "boolean"
@@ -290,7 +297,7 @@
                 "devices[].air_fast_mode"
               ],
               "condition": {
-                "functionBody": "return model.devices && model.devices[arrayIndices] && ['AIR_PURIFIER'].includes(model.devices[arrayIndices].type);"
+                "functionBody": "return model.devices && model.devices[arrayIndices] && ['AIR_PURIFIER', 'AERO_TOWER'].includes(model.devices[arrayIndices].type);"
               }
             },
             {
